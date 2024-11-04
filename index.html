@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend's Birthdays</title>
+</head>
+<body>
+    <h1>Friend's Birthdays</h1>
+    <form action="/add_friend" method="post">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="gender" placeholder="Gender" required>
+        <input type="text" name="relation" placeholder="Relation" required>
+        <input type="text" name="dob" placeholder="Date of Birth" required>
+        <button type="submit">Add Friend</button>
+    </form>
+    <ul>
+        {% for friend in friends %}
+        <li>{{ friend.name }} - {{ friend.gender }} - {{ friend.relation }} - {{ friend.dob }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
